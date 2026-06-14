@@ -88,7 +88,7 @@ export const asyncRoutes = [
       {
         path: 'shareRecord',
         name: 'MyShareRecordList',
-        meta: { title: 'ShareRecord', icon: 'Share' /*keepAlive: true*/ },
+        meta: { title: 'ShareRecord', icon: 'Share', hide: true /* Hiperfarma: time unico nao compartilha */ },
         component: () => import('@/views/my/share_record/index.vue'),
       },
       {
@@ -163,13 +163,13 @@ export const asyncRoutes = [
       {
         path: '/oauth',
         name: 'Oauth',
-        meta: { title: 'OauthManage', icon: 'Link' /*keepAlive: true*/ },
+        meta: { title: 'OauthManage', icon: 'Link', hide: true /* Hiperfarma: sem SSO externo */ },
         component: () => import('@/views/oauth/index.vue'),
       },
       {
         path: '/userToken',
         name: 'UserToken',
-        meta: { title: 'UserToken', icon: 'Ticket' /*keepAlive: true*/ },
+        meta: { title: 'UserToken', icon: 'Ticket', hide: true /* Hiperfarma: token de API nicho */ },
         component: () => import('@/views/user/token.vue'),
       },
       {
@@ -193,13 +193,13 @@ export const asyncRoutes = [
       {
         path: '/shareRecord',
         name: 'ShareRecord',
-        meta: { title: 'ShareRecord', icon: 'Share' /*keepAlive: true*/ },
+        meta: { title: 'ShareRecord', icon: 'Share', hide: true /* Hiperfarma: time unico nao compartilha */ },
         component: () => import('@/views/share_record/index.vue'),
       },
       {
         path: '/serverCmd',
         name: 'ServerCmd',
-        meta: { title: 'ServerCmd', icon: 'Tools' /*keepAlive: true*/ },
+        meta: { title: 'ServerCmd', icon: 'Tools', hide: true /* Hiperfarma: experimental/quebrado */ },
         component: () => import('@/views/rustdesk/control.vue'),
       },
     ],
