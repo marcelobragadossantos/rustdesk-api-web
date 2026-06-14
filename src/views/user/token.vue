@@ -35,7 +35,7 @@
         <el-table-column prop="created_at" :label="T('CreatedAt')" align="center"/>
         <el-table-column :label="T('ExpireTime')" prop="expired_at" align="center">
           <template #default="{row}">
-            <el-tag :type="expired(row)?'info':'success'">{{ row.expired_at ? new Date(row.expired_at * 1000).toLocaleString() : '-' }}</el-tag>
+            <el-tag :type="expired(row)?'info':'success'">{{ row.expired_at ? new Date(row.expired_at * 1000).toLocaleString('pt-BR') : '-' }}</el-tag>
           </template>
         </el-table-column>
         <el-table-column :label="T('Actions')" align="center" width="400">

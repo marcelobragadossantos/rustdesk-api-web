@@ -291,7 +291,7 @@
     const res = await list(q).catch(_ => false)
     if (res) {
       const data = res.data.list.map(item => {
-        item.last_online_time = item.last_online_time ? new Date(item.last_online_time * 1000).toLocaleString() : '-'
+        item.last_online_time = item.last_online_time ? new Date(item.last_online_time * 1000).toLocaleString('pt-BR') : '-'
         delete item.user_id
         delete item.user
         return item

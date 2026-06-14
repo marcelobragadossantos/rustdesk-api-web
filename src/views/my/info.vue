@@ -11,7 +11,8 @@
         <el-form-item :label="T('Password')" prop="password">
           <el-button type="danger" @click="showChangePwd">{{ T('ChangePassword') }}</el-button>
         </el-form-item>
-        <el-form-item label="OIDC">
+        <!-- Hiperfarma: OIDC (login social) desabilitado -> seção oculta -->
+        <el-form-item label="OIDC" v-if="false">
           <el-table :data="oidcData" border fit>
             <el-table-column :label="T('IdP')" prop="op" align="center"></el-table-column>
             <el-table-column :label="T('Status')" prop="status" align="center">
