@@ -2,7 +2,7 @@
   <div class="oauth">
     <el-card class="card">
       <h2>{{ T('OauthLogining') }}</h2>
-      <el-form class="info" label-width="100px">
+      <el-form class="info" label-width="auto">
         <el-form-item :label="T('Device')">
           <div class="impt">{{ oauthInfo.device_name }}</div>
         </el-form-item>

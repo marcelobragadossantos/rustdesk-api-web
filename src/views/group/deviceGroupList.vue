@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="list-query" shadow="hover">
-      <el-form inline label-width="80px">
+      <el-form inline label-width="auto">
         <!--        <el-form-item label="名称">
                   <el-input v-model="listQuery.name"></el-input>
                 </el-form-item>-->

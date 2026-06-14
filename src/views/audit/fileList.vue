@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="list-query" shadow="hover">
-      <el-form inline label-width="80px">
+      <el-form inline label-width="auto">
         <el-form-item :label="T('Peer')">
           <el-input v-model="listQuery.peer_id" clearable></el-input>
         </el-form-item>

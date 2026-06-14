@@ -2,7 +2,7 @@
   <div class="oauth">
     <el-card class="card">
       <h2>{{ T('OauthBinding') }}</h2>
-      <el-form class="info" label-width="100px">
+      <el-form class="info" label-width="auto">
         <el-form-item :label="T('Op')">
           <div class="impt">{{ oauthInfo.op }}</div>
         </el-form-item>

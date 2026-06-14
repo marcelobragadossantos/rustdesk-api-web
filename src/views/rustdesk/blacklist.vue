@@ -16,7 +16,7 @@
       </el-form-item>
     </el-form>
     <el-dialog v-model="form.form_visible" :title="form.form_type">
-      <el-form label-width="100px">
+      <el-form label-width="auto">
         <el-form-item label="IP">
           <el-input v-model="form.form_input"></el-input>
           <div>多个IP以 | 分割</div>
