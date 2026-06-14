@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="shareform" :model="formData" label-width="120px" label-suffix=" :">
+  <el-form ref="shareform" :model="formData" label-width="auto" label-suffix=" :">
     <el-form-item :label="T('ID')" prop="id" required>
       {{ formData.id }}
     </el-form-item>

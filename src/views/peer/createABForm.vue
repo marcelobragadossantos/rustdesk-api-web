@@ -1,6 +1,6 @@
 <template>
 
-  <el-form class="dialog-form" ref="form" :model="ABFormData" label-width="120px">
+  <el-form class="dialog-form" ref="form" :model="ABFormData" label-width="auto">
     <el-form-item :label="T('Owner')" prop="user_ids" required>
       <el-select v-model="ABFormData.user_ids" multiple @change="changeUser">
         <el-option

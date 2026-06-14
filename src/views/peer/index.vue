@@ -121,7 +121,7 @@
       </el-pagination>
     </el-card>
     <el-dialog v-model="formVisible" :title="!formData.row_id?T('Create'):T('Update')" width="800">
-      <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="formData" label-width="auto">
         <el-form-item label="ID" prop="id" required>
           <el-input v-model="formData.id"></el-input>
         </el-form-item>
@@ -171,7 +171,7 @@
     </el-dialog>
 
     <el-dialog v-model="batchABFormVisible" width="800" :title="T('Create')">
-      <el-form class="dialog-form" ref="form" :model="batchABFormData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="batchABFormData" label-width="auto">
         <el-form-item :label="T('Owner')" prop="user_id" required>
           <el-select v-model="batchABFormData.user_id" @change="changeUserForBatchCreateAB">
             <el-option

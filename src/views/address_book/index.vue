@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="list-query" shadow="hover">
-      <el-form inline label-width="120px">
+      <el-form inline label-width="auto">
         <el-form-item :label="T('Owner')">
           <el-select v-model="listQuery.user_id" clearable @change="changeQueryUser">
             <el-option
@@ -87,7 +87,7 @@
       </el-pagination>
     </el-card>
     <el-dialog v-model="formVisible" width="800" :title="!formData.row_id?T('Create') :T('Update') ">
-      <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="formData" label-width="auto">
         <el-form-item :label="T('Owner')" prop="user_id" required>
           <el-select v-model="formData.user_id" @change="changeUserForUpdate">
             <el-option

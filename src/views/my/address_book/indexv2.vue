@@ -89,7 +89,7 @@
 
 
     <el-dialog v-model="formVisible" width="800" :title="!formData.row_id?T('Create') :T('Update') ">
-      <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="formData" label-width="auto">
         <el-form-item label="ID" prop="id" required>
           <el-input v-model="formData.id"></el-input>
         </el-form-item>

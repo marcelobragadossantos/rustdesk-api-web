@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card class="list-query" shadow="hover">
-      <el-form inline label-width="120px">
+      <el-form inline label-width="auto">
         <el-form-item :label="T('AddressBookName')">
           <el-select v-model="listQuery.collection_id" clearable>
             <el-option :value="0" :label="T('MyAddressBook')"></el-option>
@@ -74,7 +74,7 @@
       </el-pagination>
     </el-card>
     <el-dialog v-model="formVisible" width="800" :title="!formData.row_id?T('Create') :T('Update') ">
-      <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="formData" label-width="auto">
         <el-form-item :label="T('AddressBookName')" required prop="collection_id">
           <el-select v-model="formData.collection_id" clearable @change="changeCollectionForUpdate">
             <el-option :value="0" :label="T('MyAddressBook')"></el-option>
@@ -153,7 +153,7 @@
                         @success=""/>
     </el-dialog>
     <el-dialog v-model="batchEditTagVisible" width="800">
-      <el-form :model="batchEditTagsFormData" label-width="120px" class="dialog-form">
+      <el-form :model="batchEditTagsFormData" label-width="auto" class="dialog-form">
         <el-form-item :label="T('Tags')" prop="tags">
           <el-select v-model="batchEditTagsFormData.tags" multiple>
             <el-option

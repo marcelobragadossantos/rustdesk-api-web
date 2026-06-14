@@ -1,6 +1,6 @@
 <template>
   <div class="form-card">
-    <el-form ref="root" label-width="120px" :model="form" :rules="rules">
+    <el-form ref="root" label-width="auto" :model="form" :rules="rules">
       <el-form-item :label="T('Username')" prop="username">
         <el-input v-model="form.username"></el-input>
       </el-form-item>

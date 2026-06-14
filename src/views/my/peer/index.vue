@@ -75,7 +75,7 @@
       </el-pagination>
     </el-card>
     <el-dialog v-model="formVisible" :title="T('Information')" width="800" :style="{ textAlign: 'center' }">
-      <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="formData" label-width="auto">
         <el-form-item label="ID" prop="id">
           <el-input v-model="formData.id" disabled></el-input>
         </el-form-item>
@@ -104,7 +104,7 @@
     </el-dialog>
 
     <el-dialog v-model="ABFormVisible" width="800" :title="T('Create')">
-      <el-form class="dialog-form" ref="form" :model="ABFormData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="ABFormData" label-width="auto">
         <el-form-item :label="T('AddressBookName')" required prop="collection_id">
           <el-select v-model="ABFormData.collection_id" clearable @change="changeCollectionForUpdate">
             <el-option :value="0" :label="T('MyAddressBook')"></el-option>
@@ -152,7 +152,7 @@
     </el-dialog>
 
     <el-dialog v-model="batchABFormVisible" width="800" :title="T('Create')">
-      <el-form class="dialog-form" ref="form" :model="batchABFormData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="batchABFormData" label-width="auto">
         <el-form-item :label="T('AddressBookName')" required prop="collection_id">
           <el-select v-model="batchABFormData.collection_id" clearable @change="changeCollectionForBatchCreateAB">
             <el-option :value="0" :label="T('MyAddressBook')"></el-option>

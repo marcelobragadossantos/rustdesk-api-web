@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card :title="T('Userinfo')" shadow="hover">
-      <el-form class="info-form" ref="form" label-width="120px" label-suffix="：">
+      <el-form class="info-form" ref="form" label-width="auto" label-suffix="：">
         <el-form-item :label="T('Username')">
           <div>{{ userStore.username }}</div>
         </el-form-item>

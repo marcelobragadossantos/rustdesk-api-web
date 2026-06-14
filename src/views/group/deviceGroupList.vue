@@ -35,7 +35,7 @@
       </el-pagination>
     </el-card>
     <el-dialog v-model="formVisible" :title="!formData.id?T('Create'):T('Update')" width="800">
-      <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
+      <el-form class="dialog-form" ref="form" :model="formData" label-width="auto">
         <el-form-item :label="T('Name')" prop="name" required>
           <el-input v-model="formData.name"></el-input>
         </el-form-item>
