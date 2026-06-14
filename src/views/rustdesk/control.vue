@@ -34,7 +34,7 @@
           <el-form inline label-width="auto">
             <el-form-item>
               <el-button type="primary" @click="handlerQuery">{{ T('Filter') }}</el-button>
-              <el-button type="danger" @click="toAdd">{{ T('Add') }}</el-button>
+              <el-button type="info" @click="toAdd">{{ T('Add') }}</el-button>
               <el-button type="success" :disabled="!canSendIdServerCmd" @click="showCmd({cmd:'',option:'',target:ID_TARGET})">{{ T('Send') }} To Id</el-button>
               <el-button type="success" :disabled="!canSendRelayServerCmd" @click="showCmd({cmd:'',option:'',target:RELAY_TARGET})">{{ T('Send') }} To Relay</el-button>
             </el-form-item>

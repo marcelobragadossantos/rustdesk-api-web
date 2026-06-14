@@ -7,7 +7,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="handlerQuery">{{ T('Filter') }}</el-button>
-          <el-button type="danger" @click="toAdd">{{ T('Add') }}</el-button>
+          <el-button type="info" @click="toAdd">{{ T('Add') }}</el-button>
           <el-button type="success" @click="toExport">{{ T('Export') }}</el-button>
         </el-form-item>
       </el-form>
