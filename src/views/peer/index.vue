@@ -27,7 +27,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="handlerQuery">{{ T('Filter') }}</el-button>
-          <el-button type="danger" @click="toAdd">{{ T('Add') }}</el-button>
+          <el-button type="info" @click="toAdd">{{ T('Add') }}</el-button>
           <el-button type="success" @click="toExport">{{ T('Export') }}</el-button>
           <el-popover :visible="showImport" placement="bottom" :width="600">
             <el-upload
@@ -53,11 +53,11 @@
             </el-upload>
             <el-button @click="showImport=false" type="primary">{{ T('Cancel') }}</el-button>
             <template #reference>
-              <el-button @click="showImport=true" type="danger" :icon="ArrowDown">{{ T('Import') }}</el-button>
+              <el-button @click="showImport=true" type="info" :icon="ArrowDown">{{ T('Import') }}</el-button>
             </template>
           </el-popover>
           <el-button type="danger" @click="toBatchDelete">{{ T('BatchDelete') }}</el-button>
-          <el-button type="primary" @click="toBatchAddToAB">{{ T('BatchAddToAB') }}</el-button>
+          <el-button type="info" @click="toBatchAddToAB">{{ T('BatchAddToAB') }}</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -104,7 +104,7 @@
           <template #default="{row}">
             <el-button type="success" @click="connectByClient(row.id)">{{ T('Link') }}</el-button>
             <el-button v-if="appStore.setting.appConfig.web_client" type="success" @click="toWebClientLink(row)">Web Client</el-button>
-            <el-button type="primary" @click="toAddressBook(row)">{{ T('AddToAddressBook') }}</el-button>
+            <el-button type="info" @click="toAddressBook(row)">{{ T('AddToAddressBook') }}</el-button>
             <el-button @click="toEdit(row)">{{ T('Edit') }}</el-button>
             <el-button type="danger" @click="del(row)">{{ T('Delete') }}</el-button>
           </template>
@@ -205,7 +205,7 @@
       </el-form>
     </el-dialog>
 
-    <el-dialog v-model="columnSettingVisible" title="Column Setting">
+    <el-dialog v-model="columnSettingVisible" title="Configurar colunas">
       <div v-for="(row, key) in visibleColumns" :key="key" style="margin-bottom: 10px;display: flex;align-items: center">
         <div style="width: 200px">
           <el-checkbox v-model="row.visible" :label="true">{{ T(row.label) }}</el-checkbox>
@@ -275,7 +275,7 @@
   })
   const listQuery = reactive({
     page: 1,
-    page_size: 10,
+    page_size: 50,
     time_ago: null,
     id: '',
     hostname: '',
@@ -526,28 +526,31 @@
   // 批量添加到地址簿 end
 
   const columnSettingVisible = ref(false)
+  // Hiperfarma: padrão enxuto p/ suporte — ID, Nome da máquina, Última conexão (status) e Apelido.
+  // CPU/Memória/OS/etc. ficam ocultos por padrão (reativáveis no ⚙️ Configurar colunas).
   const allColumns = ref([
     { name: 'id', visible: true, label: 'Id' },
-    { name: 'cpu', visible: true, label: 'Cpu' },
+    { name: 'cpu', visible: false, label: 'Cpu' },
     { name: 'hostname', visible: true, label: 'Hostname' },
-    { name: 'memory', visible: true, label: 'Memory' },
-    { name: 'os', visible: true, label: 'Os' },
+    { name: 'memory', visible: false, label: 'Memory' },
+    { name: 'os', visible: false, label: 'Os' },
     { name: 'last_online_time', visible: true, label: 'LastOnlineTime' },
-    { name: 'last_online_ip', visible: true, label: 'LastOnlineIp' },
-    { name: 'username', visible: true, label: 'Username' },
-    { name: 'group_id', visible: true, label: 'Group' },
-    { name: 'uuid', visible: true, label: 'Uuid' },
-    { name: 'version', visible: true, label: 'Version' },
+    { name: 'last_online_ip', visible: false, label: 'LastOnlineIp' },
+    { name: 'username', visible: false, label: 'Username' },
+    { name: 'group_id', visible: false, label: 'Group' },
+    { name: 'uuid', visible: false, label: 'Uuid' },
+    { name: 'version', visible: false, label: 'Version' },
     { name: 'alias', visible: true, label: 'Alias' },
-    { name: 'created_at', visible: true, label: 'CreatedAt' },
-    { name: 'updated_at', visible: true, label: 'UpdatedAt' },
+    { name: 'created_at', visible: false, label: 'CreatedAt' },
+    { name: 'updated_at', visible: false, label: 'UpdatedAt' },
   ])
-  const visibleColumns = ref(JSON.parse(localStorage.getItem('peer_visible_columns')) || allColumns.value)
+  // _v2: força os novos padrões mesmo p/ quem já tinha config salva do layout antigo
+  const visibleColumns = ref(JSON.parse(localStorage.getItem('peer_visible_columns_v2')) || allColumns.value)
   const showColumnSetting = () => {
     columnSettingVisible.value = true
   }
   const saveColumnSetting = () => {
-    localStorage.setItem('peer_visible_columns', JSON.stringify(visibleColumns.value))
+    localStorage.setItem('peer_visible_columns_v2', JSON.stringify(visibleColumns.value))
     ElMessage.success(T('OperationSuccess'))
     columnSettingVisible.value = false
   }

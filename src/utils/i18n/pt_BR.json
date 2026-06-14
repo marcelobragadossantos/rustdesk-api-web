@@ -171,6 +171,7 @@
   "Drop file here or click to upload": { "One": "Arraste o arquivo aqui ou clique para enviar" },
   "Please upload csv file": { "One": "Envie um arquivo CSV" },
   "Columns": { "One": "Colunas" },
+  "Import": { "One": "Importar" },
   "You can reference export file": { "One": "Você pode usar o arquivo exportado como referência" },
   "Remark": { "One": "Observação" }
 }
