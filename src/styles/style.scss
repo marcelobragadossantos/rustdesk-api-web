@@ -1,13 +1,23 @@
 $basicBlack: #000000;
 $basicWhite: #ffffff;
 
-$primaryColor: #409eff;
+// Marca Hiperfarma — vermelho (design-system: primary-600 #dc2626)
+$primaryColor: #dc2626;
 
 :root {
   --basicBlack: #000000;
   --basicWhite: #ffffff;
-  --primaryColor: #409eff;
+  --primaryColor: #dc2626;
   --tag-bg-color: #efefef;
+
+  /* Element Plus usa --el-color-primary (+ variantes light/dark): força o vermelho na UI toda */
+  --el-color-primary: #dc2626;
+  --el-color-primary-light-3: #e66767;
+  --el-color-primary-light-5: #ee9393;
+  --el-color-primary-light-7: #f5bebe;
+  --el-color-primary-light-8: #f8d4d4;
+  --el-color-primary-light-9: #fce9e9;
+  --el-color-primary-dark-2: #b01e1e;
 }
 
 body {
