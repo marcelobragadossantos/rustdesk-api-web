@@ -69,6 +69,7 @@
   "AddressBooks": { "One": "Catálogos" },
   "System": { "One": "Sistema" },
   "PeerManage": { "One": "Dispositivos" },
+  "MyPeer": { "One": "Meus dispositivos" },
   "AddressBookManage": { "One": "Catálogos" },
   "GroupManage": { "One": "Grupos" },
   "UserManage": { "One": "Usuários" },

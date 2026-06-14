@@ -72,8 +72,12 @@ export const useAppStore = defineStore({
     getAdminConfig () {
       console.log('getAdminConfig')
       return admin().then(res => {
-        this.replaceAdminTitle(res.data.title)
-        this.setting.hello = res.data.hello
+        // Hiperfarma: mantém nosso título ("Suporte Hiperfarma") e remove a saudação
+        // padrão do backend (vinha em chinês). Para usar o título/hello do backend,
+        // descomente as duas linhas abaixo.
+        // this.replaceAdminTitle(res.data.title)
+        // this.setting.hello = res.data.hello
+        this.setting.hello = ''
       })
     },
     replaceAdminTitle (newTitle) {
